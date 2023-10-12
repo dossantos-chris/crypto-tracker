@@ -25,7 +25,7 @@ const getData = async () => {
     }
 };
 
-//Console log the current price of BTC
+//Output BTC stats to json file
 getData().then((data) =>
     fs.writeFile("btc.json", JSON.stringify(data, null, 4), (err) => 
         console.log("data written to file"))
