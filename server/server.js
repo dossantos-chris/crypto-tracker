@@ -12,7 +12,7 @@ app.use(cors('*'));
 app.get('/api/:cryptocurrency', (req, res) => {
     const { cryptocurrency } = req.params;
     
-    // Fetch current crypto quote from getData API
+    // Fetch current crypto quote from getQuote API
     getQuote(cryptocurrency).then((data) =>
         res.json(data['data']));
 });
