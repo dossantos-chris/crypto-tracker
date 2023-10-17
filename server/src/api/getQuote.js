@@ -1,7 +1,7 @@
 const axios = require('axios');
 
-// Send GET request to CoinMarketCap API for crypto quote
-module.exports.getQuote = async (crypto) => {
+module.exports.getQuote = async (req, res) => {
+    const { crypto } = req.params;
     
     // Pull the crypto API URL and API key from env file
     let API_URL = "";
@@ -12,8 +12,9 @@ module.exports.getQuote = async (crypto) => {
     else if(crypto === "eth")
         API_URL = process.env.API_URL_ETH;
     else
-        return {'data' : 'Crypto not supported.'};
+        return res.status(400).send('Crypto not supported.');
 
+    // Try and send GET request to CoinMarketCap API for crypto quote
     try 
     {
         let response = await axios.get(API_URL, 
@@ -23,10 +24,11 @@ module.exports.getQuote = async (crypto) => {
                 'X-CMC_PRO_API_KEY': API_KEY
             }
         });
-        return response.data;
+        res.json(response.data['data']);
     } 
     catch (error) 
     {
-        return error;
+        console.log(error);
+        res.status(500).send('Internal Server Error');
     }
 };

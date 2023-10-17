@@ -8,14 +8,8 @@ const { getQuote } = require('./api/getQuote.js');
 
 app.use(cors('*'));
 
-// Sends user current quote on the price of a cryptocurrency
-app.get('/api/:cryptocurrency', (req, res) => {
-    const { cryptocurrency } = req.params;
-    
-    // Fetch current crypto quote from getQuote API
-    getQuote(cryptocurrency).then((data) =>
-        res.json(data['data']));
-});
+// Fetch current crypto quote from getQuote API and send to the user
+app.get('/api/:crypto', getQuote);
 
 // Start the server
 app.listen(port, () => {
