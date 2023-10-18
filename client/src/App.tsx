@@ -27,12 +27,7 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="crypto"
-         onClick={() => {
-          if(crypto === "btc")
-            fetchQuote(API_URL_ETH);
-          else
-            fetchQuote(API_URL_BTC);
-        }}
+         onClick={() => {(crypto === "btc") ? fetchQuote(API_URL_ETH) : fetchQuote(API_URL_BTC);}}
         >
           {crypto} : {price}
         </div>
