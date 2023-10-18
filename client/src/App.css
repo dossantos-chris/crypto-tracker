@@ -4,3 +4,23 @@
   padding: 2rem;
   text-align: center;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.crypto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100px;
+  height: 50px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
