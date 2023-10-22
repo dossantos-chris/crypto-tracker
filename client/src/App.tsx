@@ -19,7 +19,7 @@ function App() {
     setPrice(data['price']);
   }
 
-  useEffect(() => {
+    useEffect(() => {
     fetchQuote(API_URL_BTC);
   }, []);
 
