@@ -6,7 +6,7 @@ const port = 5000;
 
 const { getQuote } = require('./api/getQuote.js');
 
-app.use(cors('*'));
+app.use(cors());
 
 // Fetch current crypto quote from getQuote API and send to the user
 app.get('/api/:crypto', getQuote);
