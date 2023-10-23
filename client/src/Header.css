@@ -1,13 +1,13 @@
 .Header {
     height: 50px;
     background: grey;
-  }
+}
   
-  .Header .container {
+.Header .container {
     width: 1800px;
     height: 100%;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     align-items: center;
-  }
+}
